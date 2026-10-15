@@ -5,62 +5,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PilotDesk – Privacy</title>
 <link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Schibsted+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="lang.js"></script>
 </head>
 <body>
-<header>
-<img src="icon.png" alt="PilotDesk">
-<h1>PilotDesk</h1>
-<p lang="en">Remote for Mac: terminal, files and screen from iPhone and iPad</p>
-<p lang="it">Il tuo Mac da iPhone e iPad: terminale, file e schermo</p>
-</header>
-<nav>
-<a href="index.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
-<a href="privacy.html">Privacy</a>
-<a href="#" onclick="return switchLanguage()"><span lang="en">Italiano</span><span lang="it">English</span></a>
-</nav>
-<main>
+<div class="wrap">
 
+<header class="top">
+  <a class="brand" href="index.html"><img src="icon.png" alt="">PilotDesk</a>
+  <nav>
+    <a href="support.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+    <button class="lang-switch" onclick="switchLanguage()"><span lang="en">Italiano</span><span lang="it">English</span></button>
+  </nav>
+</header>
+
+<main class="prose">
 <div lang="en">
-<h2>Privacy policy</h2>
-<p>Last updated: 15 October 2026</p>
-<p>PilotDesk does not collect any data. The developer receives nothing from the app: no account, no analytics, no advertising, no tracking.</p>
-<h3>Your Macs and passwords</h3>
-<p>The hosts you add (name, address, user name) are saved on your device. Passwords, keys and pairing codes are saved in the device Keychain. None of this is sent to the developer.</p>
-<h3>Connections</h3>
-<p>Terminal, files and screen travel directly between your device and your Mac, encrypted (SSH) or on your local network or USB cable. They do not pass through any server of the developer.</p>
-<h3>Local network and Face ID</h3>
-<p>Local network access is used only to find your Mac. Face ID or Touch ID, if you turn them on, are handled by iOS: the app only learns whether unlocking succeeded.</p>
-<h3>Diagnostics</h3>
-<p>The streaming log stays on the device. It leaves it only if you choose to share it yourself.</p>
-<h3>Deleting your data</h3>
-<p>Delete a host in the app, or delete the app, and what PilotDesk stored is gone.</p>
-<h3>Contact</h3>
-<p>Questions about privacy: <a href="https://github.com/robchdev/pilotdesk-site/issues/new">open a request</a>.</p>
+  <h1>Privacy policy</h1>
+  <p class="updated">Last updated: 16 October 2026</p>
+  <p>PilotDesk does not collect any data. The developer receives nothing from the app: no account, no analytics, no advertising, no tracking.</p>
+
+  <h2>Your Macs and passwords</h2>
+  <p>The hosts you add (name, address, user name) are saved on your device. Passwords, keys and pairing codes are saved in the device Keychain. None of this is sent to the developer.</p>
+
+  <h2>Connections</h2>
+  <p>Terminal, files and screen travel directly between your device and your Mac, encrypted (SSH) or on your local network or USB cable. They do not pass through any server of the developer.</p>
+
+  <h2>Local network and Face ID</h2>
+  <p>Local network access is used only to find your Mac. Face ID or Touch ID, if you turn them on, are handled by iOS: the app only learns whether unlocking succeeded.</p>
+
+  <h2>Purchases</h2>
+  <p>Purchases go through Apple. The app only learns which features you own; it never sees your payment details.</p>
+
+  <h2>Diagnostics</h2>
+  <p>The streaming log stays on the device. It leaves it only if you choose to share it yourself.</p>
+
+  <h2>Deleting your data</h2>
+  <p>Delete a host in the app, or delete the app, and what PilotDesk stored is gone.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: <a href="https://github.com/robchdev/pilotdesk-site/issues/new">open a request</a>.</p>
 </div>
+
 <div lang="it">
-<h2>Informativa sulla privacy</h2>
-<p>Ultimo aggiornamento: 15 ottobre 2026</p>
-<p>PilotDesk non raccoglie alcun dato. Lo sviluppatore non riceve niente dall'app: nessun account, nessuna statistica, nessuna pubblicità, nessun tracciamento.</p>
-<h3>I tuoi Mac e le password</h3>
-<p>Gli host che aggiungi (nome, indirizzo, nome utente) restano sul tuo dispositivo. Password, chiavi e codici di abbinamento sono nel portachiavi del dispositivo. Niente di tutto questo viene inviato allo sviluppatore.</p>
-<h3>Connessioni</h3>
-<p>Terminale, file e schermo viaggiano direttamente tra il tuo dispositivo e il tuo Mac, cifrati (SSH) oppure sulla rete locale o sul cavo USB. Non passano da nessun server dello sviluppatore.</p>
-<h3>Rete locale e Face ID</h3>
-<p>L'accesso alla rete locale serve solo a trovare il tuo Mac. Face ID o Touch ID, se li attivi, sono gestiti da iOS: l'app sa solo se lo sblocco è riuscito.</p>
-<h3>Diagnostica</h3>
-<p>Il registro dello streaming resta sul dispositivo. Esce solo se scegli tu di condividerlo.</p>
-<h3>Eliminare i dati</h3>
-<p>Elimina un host nell'app, oppure elimina l'app, e ciò che PilotDesk ha salvato sparisce.</p>
-<h3>Contatto</h3>
-<p>Domande sulla privacy: <a href="https://github.com/robchdev/pilotdesk-site/issues/new">apri una richiesta</a>.</p>
+  <h1>Informativa sulla privacy</h1>
+  <p class="updated">Ultimo aggiornamento: 16 ottobre 2026</p>
+  <p>PilotDesk non raccoglie alcun dato. Lo sviluppatore non riceve niente dall'app: nessun account, nessuna statistica, nessuna pubblicità, nessun tracciamento.</p>
+
+  <h2>I tuoi Mac e le password</h2>
+  <p>Gli host che aggiungi (nome, indirizzo, nome utente) restano sul tuo dispositivo. Password, chiavi e codici di abbinamento sono nel portachiavi del dispositivo. Niente di tutto questo viene inviato allo sviluppatore.</p>
+
+  <h2>Connessioni</h2>
+  <p>Terminale, file e schermo viaggiano direttamente tra il tuo dispositivo e il tuo Mac, cifrati (SSH) oppure sulla rete locale o sul cavo USB. Non passano da nessun server dello sviluppatore.</p>
+
+  <h2>Rete locale e Face ID</h2>
+  <p>L'accesso alla rete locale serve solo a trovare il tuo Mac. Face ID o Touch ID, se li attivi, sono gestiti da iOS: l'app sa solo se lo sblocco è riuscito.</p>
+
+  <h2>Acquisti</h2>
+  <p>Gli acquisti passano da Apple. L'app sa solo quali funzioni possiedi; non vede mai i tuoi dati di pagamento.</p>
+
+  <h2>Diagnostica</h2>
+  <p>Il registro dello streaming resta sul dispositivo. Esce solo se scegli tu di condividerlo.</p>
+
+  <h2>Eliminare i dati</h2>
+  <p>Elimina un host nell'app, oppure elimina l'app, e ciò che PilotDesk ha salvato sparisce.</p>
+
+  <h2>Contatto</h2>
+  <p>Domande sulla privacy: <a href="https://github.com/robchdev/pilotdesk-site/issues/new">apri una richiesta</a>.</p>
 </div>
 </main>
+
 <footer>
-<p lang="en">PilotDesk is an independent app, not affiliated with or endorsed by Apple Inc. Mac is a trademark of Apple Inc.</p>
-<p lang="it">PilotDesk è un'app indipendente, non affiliata ad Apple Inc. né approvata da essa. Mac è un marchio di Apple Inc.</p>
-<p>© 2026 Roberto Chiarella</p>
+  <div class="row">
+    <a href="index.html">PilotDesk</a>
+    <a href="support.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
+    <span>© 2026 Roberto Chiarella</span>
+  </div>
 </footer>
+
+</div>
 </body>
 </html>

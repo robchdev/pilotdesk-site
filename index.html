@@ -3,71 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PilotDesk</title>
+<title>PilotDesk – Your Mac from iPhone and iPad</title>
+<meta name="description" content="PilotDesk opens your Mac's terminal and files on iPhone and iPad, shows its screen and turns your iPad into a second display.">
 <link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Schibsted+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script src="lang.js"></script>
 </head>
 <body>
-<header>
-<img src="icon.png" alt="PilotDesk">
-<h1>PilotDesk</h1>
-<p lang="en">Remote for Mac: terminal, files and screen from iPhone and iPad</p>
-<p lang="it">Il tuo Mac da iPhone e iPad: terminale, file e schermo</p>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="index.html"><img src="icon.png" alt="">PilotDesk</a>
+  <nav>
+    <a href="support.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
+    <a href="privacy.html">Privacy</a>
+    <button class="lang-switch" onclick="switchLanguage()"><span lang="en">Italiano</span><span lang="it">English</span></button>
+  </nav>
 </header>
-<nav>
-<a href="index.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
-<a href="privacy.html">Privacy</a>
-<a href="#" onclick="return switchLanguage()"><span lang="en">Italiano</span><span lang="it">English</span></a>
-</nav>
+
 <main>
+<section class="hero">
+  <h1><span lang="en">Your Mac, from wherever you are.</span><span lang="it">Il tuo Mac, ovunque tu sia.</span></h1>
+  <p class="lede" lang="en">PilotDesk opens your Mac's terminal and files on iPhone and iPad, shows its screen, and can turn your iPad into a second display.</p>
+  <p class="lede" lang="it">PilotDesk apre il terminale e i file del tuo Mac su iPhone e iPad, ti fa vedere il suo schermo e trasforma l'iPad in un secondo monitor.</p>
+  <div class="actions">
+    <a class="store" href="https://apps.apple.com/app/id6823354511">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.77c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.52zM14.2 6.3c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>
+      <span lang="en">Get it on the App Store</span><span lang="it">Scaricala dall'App Store</span>
+    </a>
+    <a class="host-link" href="#host"><span lang="en">PilotDesk Host for the Mac, free</span><span lang="it">PilotDesk Host per il Mac, gratis</span></a>
+  </div>
 
-<div lang="en">
-<h2>PilotDesk Host for the Mac</h2>
-<p>Free. Needed only for the remote desktop and the extended display; terminal and files work without it.</p>
-<p><a class="button" href="https://github.com/robchdev/pilotdesk-site/releases/latest/download/PilotDesk-Host.dmg">Download PilotDesk Host</a></p>
-<p>macOS 14 or later. Open the downloaded file, drag PilotDesk Host to Applications and open it: it lives in the menu bar. The first time, macOS asks to allow Screen Recording and Accessibility, which it needs to show the screen and move the pointer.</p>
+  <div class="mac" aria-hidden="true">
+    <div class="display"><div class="glass"><pre class="term" id="term"></pre></div></div>
+    <div class="stand"></div><div class="foot"></div>
+  </div>
+</section>
 
-<h2>Support</h2>
-<h3>Try it without a Mac</h3>
-<p>Tap “Try without a Mac” on the first screen, or Settings › Demo › Add the demo Mac. The demo Mac lives inside the app: terminal, files, monitor and Docker all work with it, and nothing goes over the network.</p>
-<h3>Connect to your Mac (terminal and files)</h3>
-<p>On the Mac open System Settings › General › Sharing and turn on Remote Login. In PilotDesk add a host with the Mac's address (for example <code>MyMac.local</code> or its IP), your Mac user name and password.</p>
-<h3>Desktop and extended display</h3>
-<p>Keep PilotDesk Host open on the Mac. It finds the iPhone or iPad on the same Wi-Fi, or over a USB cable, and asks for the pairing code shown on the device.</p>
-<h3>The Mac is not found</h3>
-<p>Both devices must be on the same network, and PilotDesk must be allowed in Settings › Privacy &amp; Security › Local Network on the iPhone or iPad.</p>
-<h3>Purchases and codes</h3>
-<p>Terminal, files and one Mac are free. PilotDesk Pro, or the single features, are one-time purchases with no subscription, and there is a free 24-hour trial. Bought on another device? Settings › Restore purchases. Got a code? Settings › Redeem a code.</p>
-<h3>Contact</h3>
-<p>For anything else, <a href="https://github.com/robchdev/pilotdesk-site/issues/new">open a request</a> and describe what happens.</p>
-</div>
+<section class="features">
+  <h2><span lang="en">Everything you open a laptop for, on the phone in your hand.</span><span lang="it">Quello per cui apriresti il portatile, sul telefono che hai in mano.</span></h2>
 
-<div lang="it">
-<h2>PilotDesk Host per il Mac</h2>
-<p>Gratis. Serve solo per il desktop remoto e lo schermo esteso; terminale e file funzionano anche senza.</p>
-<p><a class="button" href="https://github.com/robchdev/pilotdesk-site/releases/latest/download/PilotDesk-Host.dmg">Scarica PilotDesk Host</a></p>
-<p>macOS 14 o successivo. Apri il file scaricato, trascina PilotDesk Host in Applicazioni e aprila: vive nella barra dei menu. La prima volta macOS chiede di consentire Registrazione schermo e Accessibilità, che servono per mostrare lo schermo e muovere il puntatore.</p>
+  <div class="feature">
+    <div>
+      <h3><span lang="en">A real terminal</span><span lang="it">Un vero terminale</span></h3>
+      <p lang="en">SSH into one Mac or several, with a password or a key. Esc, Tab, Ctrl and the arrows sit above the keyboard, and the commands you use often are one tap away.</p>
+      <p lang="it">Entri in SSH su uno o più Mac, con password o chiave. Esc, Tab, Ctrl e frecce stanno sopra la tastiera, e i comandi che usi spesso sono a un tocco.</p>
+    </div>
+    <div class="shot"><img lang="en" src="img/en-1.jpg" alt="The terminal connected to a Mac" loading="lazy" width="507" height="1100"><img lang="it" src="img/it-1.jpg" alt="Il terminale collegato a un Mac" loading="lazy" width="507" height="1100"></div>
+  </div>
 
-<h2>Assistenza</h2>
-<h3>Provare senza un Mac</h3>
-<p>Tocca “Prova senza un Mac” nella prima schermata, oppure Impostazioni › Demo › Aggiungi il Mac di prova. Il Mac di prova vive dentro l'app: terminale, file, monitor e Docker funzionano, e niente passa dalla rete.</p>
-<h3>Collegarsi al tuo Mac (terminale e file)</h3>
-<p>Sul Mac apri Impostazioni di Sistema › Generali › Condivisione e attiva Login remoto. In PilotDesk aggiungi un host con l'indirizzo del Mac (per esempio <code>MioMac.local</code> o il suo IP), il nome utente e la password del Mac.</p>
-<h3>Desktop e schermo esteso</h3>
-<p>Tieni aperta PilotDesk Host sul Mac. Trova iPhone o iPad sulla stessa rete Wi-Fi, o via cavo USB, e chiede il codice di abbinamento mostrato sul dispositivo.</p>
-<h3>Il Mac non viene trovato</h3>
-<p>I due dispositivi devono essere sulla stessa rete, e PilotDesk deve essere consentita in Impostazioni › Privacy e sicurezza › Rete locale su iPhone o iPad.</p>
-<h3>Acquisti e codici</h3>
-<p>Terminale, file e un Mac sono gratis. PilotDesk Pro, o le singole funzioni, sono acquisti una tantum senza abbonamento, con una prova gratuita di 24 ore. Hai comprato su un altro dispositivo? Impostazioni › Ripristina acquisti. Hai un codice? Impostazioni › Riscatta un codice.</p>
-<h3>Contatto</h3>
-<p>Per tutto il resto, <a href="https://github.com/robchdev/pilotdesk-site/issues/new">apri una richiesta</a> e descrivi cosa succede.</p>
-</div>
+  <div class="feature">
+    <div>
+      <h3><span lang="en">Your files, where they are</span><span lang="it">I tuoi file, dove sono</span></h3>
+      <p lang="en">Browse folders, preview photos and documents, edit a text file and save it back, or copy something from one Mac to another.</p>
+      <p lang="it">Sfogli le cartelle, guardi foto e documenti, modifichi un file di testo e lo salvi sul Mac, o copi qualcosa da un Mac all'altro.</p>
+    </div>
+    <div class="shot"><img lang="en" src="img/en-2.jpg" alt="Folders on the Mac" loading="lazy" width="507" height="1100"><img lang="it" src="img/it-2.jpg" alt="Le cartelle del Mac" loading="lazy" width="507" height="1100"></div>
+  </div>
+
+  <div class="feature">
+    <div>
+      <h3><span lang="en">How the Mac is doing</span><span lang="it">Come sta il Mac</span></h3>
+      <p lang="en">Processor, memory, free disk and uptime, without opening Activity Monitor.</p>
+      <p lang="it">Processore, memoria, disco libero e da quanto è acceso, senza aprire Monitoraggio Attività.</p>
+    </div>
+    <div class="shot"><img lang="en" src="img/en-3.jpg" alt="CPU, memory and disk of the Mac" loading="lazy" width="507" height="1100"><img lang="it" src="img/it-3.jpg" alt="Processore, memoria e disco del Mac" loading="lazy" width="507" height="1100"></div>
+  </div>
+
+  <div class="feature">
+    <div>
+      <h3><span lang="en">Docker, without a laptop</span><span lang="it">Docker, senza portatile</span></h3>
+      <p lang="en">See which containers are running, start and stop them, read their logs.</p>
+      <p lang="it">Vedi quali container sono attivi, li avvii e li fermi, leggi i loro log.</p>
+    </div>
+    <div class="shot"><img lang="en" src="img/en-4.jpg" alt="Docker containers on the Mac" loading="lazy" width="507" height="1100"><img lang="it" src="img/it-4.jpg" alt="I container Docker del Mac" loading="lazy" width="507" height="1100"></div>
+  </div>
+
+  <div class="screen-note" id="host">
+    <h3><span lang="en">The Mac's screen, and a second one</span><span lang="it">Lo schermo del Mac, e un secondo schermo</span></h3>
+    <p lang="en">With PilotDesk Host open on the Mac you can see and control its screen, or let the Mac use your iPad or iPhone as an extra display. It works over Wi-Fi or a USB cable.</p>
+    <p lang="it">Con PilotDesk Host aperta sul Mac puoi vedere e comandare il suo schermo, oppure far usare al Mac il tuo iPad o iPhone come monitor in più. Funziona via Wi-Fi o con il cavo USB.</p>
+    <p><a class="host-link" href="https://github.com/robchdev/pilotdesk-site/releases/latest/download/PilotDesk-Host.dmg"><span lang="en">Download PilotDesk Host</span><span lang="it">Scarica PilotDesk Host</span></a></p>
+    <p lang="en">Free, for macOS 14 or later, signed and notarized by Apple.</p>
+    <p lang="it">Gratis, per macOS 14 o successivo, firmata e notarizzata da Apple.</p>
+  </div>
+</section>
+
+<section class="setup">
+  <h2><span lang="en">Set up in two minutes</span><span lang="it">Pronta in due minuti</span></h2>
+  <ol>
+    <li>
+      <strong><span lang="en">Turn on Remote Login</span><span lang="it">Attiva Login remoto</span></strong>
+      <span lang="en">On the Mac: System Settings, General, Sharing.</span>
+      <span lang="it">Sul Mac: Impostazioni di Sistema, Generali, Condivisione.</span>
+    </li>
+    <li>
+      <strong><span lang="en">Add your Mac</span><span lang="it">Aggiungi il tuo Mac</span></strong>
+      <span lang="en">In PilotDesk, enter its address (like <code>MyMac.local</code>), your user name and password.</span>
+      <span lang="it">In PilotDesk scrivi il suo indirizzo (tipo <code>MioMac.local</code>), il nome utente e la password.</span>
+    </li>
+    <li>
+      <strong><span lang="en">Want the screen too?</span><span lang="it">Vuoi anche lo schermo?</span></strong>
+      <span lang="en">Install PilotDesk Host on the Mac and leave it open. It finds your iPhone or iPad by itself.</span>
+      <span lang="it">Installa PilotDesk Host sul Mac e lasciala aperta. Trova da sola il tuo iPhone o iPad.</span>
+    </li>
+  </ol>
+</section>
+
+<section class="price">
+  <h2><span lang="en">Free to start, pay once for more</span><span lang="it">Gratis per iniziare, paghi una volta per il resto</span></h2>
+  <table>
+    <tbody>
+      <tr><td><span lang="en">Terminal, files and one Mac</span><span lang="it">Terminale, file e un Mac</span></td><td><span lang="en">Free</span><span lang="it">Gratis</span></td></tr>
+      <tr><td><span lang="en">Remote desktop</span><span lang="it">Desktop remoto</span></td><td>5,99 €</td></tr>
+      <tr><td><span lang="en">Extended display</span><span lang="it">Schermo esteso</span></td><td>3,99 €</td></tr>
+      <tr><td><span lang="en">Tools: commands, Monitor, Docker, editor, gallery</span><span lang="it">Strumenti: comandi, Monitor, Docker, editor, galleria</span></td><td>1,99 €</td></tr>
+      <tr><td><span lang="en">More Macs</span><span lang="it">Più Mac</span></td><td>1,99 €</td></tr>
+      <tr><td><span lang="en">Mac-style keyboards and Touch Bar</span><span lang="it">Tastiere in stile Mac e Touch Bar</span></td><td>0,99 €</td></tr>
+      <tr class="pro"><td><span lang="en">PilotDesk Pro: all of it, and what comes next</span><span lang="it">PilotDesk Pro: tutto, e quello che arriverà</span></td><td>9,99 €</td></tr>
+    </tbody>
+  </table>
+  <p lang="en">One-time purchases, no subscription. Try everything free for 24 hours inside the app. Prices are for Italy and vary by country.</p>
+  <p lang="it">Acquisti una tantum, nessun abbonamento. Nell'app provi tutto gratis per 24 ore. Prezzi per l'Italia, cambiano da paese a paese.</p>
+</section>
 </main>
+
 <footer>
-<p lang="en">PilotDesk is an independent app, not affiliated with or endorsed by Apple Inc. Mac is a trademark of Apple Inc.</p>
-<p lang="it">PilotDesk è un'app indipendente, non affiliata ad Apple Inc. né approvata da essa. Mac è un marchio di Apple Inc.</p>
-<p>© 2026 Roberto Chiarella</p>
+  <div class="row">
+    <a href="support.html"><span lang="en">Support</span><span lang="it">Assistenza</span></a>
+    <a href="privacy.html">Privacy</a>
+    <span>© 2026 Roberto Chiarella</span>
+  </div>
+  <p lang="en">PilotDesk is an independent app, not affiliated with or endorsed by Apple Inc. Mac, iPhone and iPad are trademarks of Apple Inc.</p>
+  <p lang="it">PilotDesk è un'app indipendente, non affiliata ad Apple Inc. né approvata da essa. Mac, iPhone e iPad sono marchi di Apple Inc.</p>
 </footer>
+
+</div>
+<script src="term.js"></script>
 </body>
 </html>

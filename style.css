@@ -1,38 +1,146 @@
-:root { --ink: #16263a; --soft: #566a80; --paper: #f7fbff; --line: #dbe8f3; --accent: #1f6fb8; }
-@media (prefers-color-scheme: dark) {
-  :root { --ink: #eaf4ff; --soft: #9fb4c8; --paper: #0f1a26; --line: #22364a; --accent: #7cc4ff; }
+:root {
+  --paper: #edf3f8;
+  --paper-deep: #dfe9f2;
+  --ink: #0c1e38;
+  --mist: #5b6e86;
+  --screen: #0a1a33;
+  --bezel: #f4f8fc;
+  --signal: #3fd3ff;
+  --link: #0b7aa0;
+  --rule: #c9d7e4;
+  --measure: 34rem;
 }
+
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink);
-  font: 17px/1.6 ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif; }
-header { background: linear-gradient(135deg, #263c58, #2f6fa8 55%, #59b8e8); color: #fff;
-  padding: 56px 16px 48px; text-align: center; }
-header img { width: 120px; height: 120px; border-radius: 27px; box-shadow: 0 12px 34px rgba(20, 10, 70, .35); }
-header h1 { font-size: 40px; line-height: 1.1; margin: 20px 0 6px; }
-header p { margin: 0; font-size: 19px; opacity: .92; }
-nav { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: center; padding: 14px 16px;
-  border-bottom: 1px solid var(--line); }
-a { color: var(--accent); }
-nav a { text-decoration: none; font-weight: 600; }
-nav a:hover, nav a:focus-visible { text-decoration: underline; }
-main { max-width: 680px; margin: 0 auto; padding: 28px 16px 64px; }
-h2 { font-size: 24px; line-height: 1.25; margin: 36px 0 8px; }
-h3 { font-size: 18px; margin: 24px 0 4px; }
-p, ul { margin: 0 0 14px; }
-ul { padding-left: 22px; }
-footer { max-width: 680px; margin: 0 auto; padding: 20px 16px 48px; border-top: 1px solid var(--line);
-  color: var(--soft); font-size: 14px; }
-html[data-lang="en"] [lang="it"], html[data-lang="it"] [lang="en"] { display: none; }
-header .store { display: inline-block; margin-top: 26px; padding: 13px 28px; border-radius: 999px;
-  background: #fff; color: #3d2fae; font-weight: 700; text-decoration: none; box-shadow: 0 8px 22px rgba(20, 10, 70, .28); }
-header .store:hover, header .store:focus-visible { background: #f1edff; }
-header .platforms { margin-top: 12px; font-size: 15px; }
-.shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px;
-  margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
-.shots img { flex: 0 0 auto; width: 200px; height: auto; border-radius: 24px; scroll-snap-align: start;
-  box-shadow: 0 10px 26px rgba(20, 10, 70, .22); }
-img.mac { display: block; width: 100%; height: auto; margin: 18px 0 8px; border-radius: 12px;
-  box-shadow: 0 10px 26px rgba(20, 10, 70, .22); }
-@media (min-width: 700px) { .shots { justify-content: center; overflow: visible; margin: 0; padding: 4px 0 14px; } }
-a.button { display: inline-block; padding: 12px 22px; border-radius: 999px; color: #fff; font-weight: 700;
-  text-decoration: none; background: linear-gradient(90deg, #12b5e5, #1f6fe0); }
+
+html[data-lang="en"] [lang="it"],
+html[data-lang="it"] [lang="en"] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { max-width: 70rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
+
+/* Top bar: the icon and name on the left, the three places on the right. */
+.top { display: flex; align-items: center; gap: 1rem; padding: 1.25rem 0; }
+.brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1.15rem; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.top nav { margin-left: auto; flex-wrap: wrap; justify-content: flex-end; display: flex; gap: 1.25rem; font-size: .95rem; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+.top nav a[aria-current="page"] { color: var(--link); }
+
+/* Hero: the headline, then the Mac itself. */
+.hero { padding: clamp(2rem, 6vw, 4.5rem) 0 0; }
+.hero h1 {
+  font-size: clamp(2.6rem, 7.2vw, 5.4rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  font-weight: 800;
+  margin: 0;
+  max-width: 13ch;
+}
+.hero p.lede { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--mist); max-width: var(--measure); margin: 1.25rem 0 0; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; margin-top: 2rem; }
+.store {
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: var(--ink); color: #fff; text-decoration: none;
+  padding: .85rem 1.4rem; border-radius: 14px; font-weight: 600;
+}
+.store svg { width: 20px; height: 20px; fill: currentColor; }
+.store:hover { background: #163257; }
+.host-link { font-weight: 600; }
+
+.mac { margin: clamp(2.5rem, 6vw, 4rem) auto 0; max-width: 58rem; }
+.mac .display {
+  background: var(--bezel);
+  border-radius: clamp(14px, 2.4vw, 26px);
+  padding: clamp(10px, 1.6vw, 18px);
+  box-shadow: 0 1px 0 #fff inset, 0 30px 60px -30px rgba(12, 30, 56, .45);
+}
+.mac .glass {
+  background: radial-gradient(120% 90% at 20% 0%, #10294d 0%, var(--screen) 60%);
+  border-radius: clamp(8px, 1.2vw, 14px);
+  aspect-ratio: 16 / 9.4;
+  padding: clamp(.9rem, 2.4vw, 2rem);
+  overflow: hidden;
+}
+.mac .stand { width: 22%; height: clamp(26px, 4vw, 48px); margin: 0 auto; background: linear-gradient(#b9cadb, #d5e2ee); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
+.mac .foot { width: 38%; height: clamp(6px, .9vw, 10px); margin: 0 auto; background: var(--bezel); border-radius: 0 0 8px 8px; box-shadow: 0 10px 20px -10px rgba(12, 30, 56, .4); }
+
+.term {
+  margin: 0;
+  font: 400 clamp(.62rem, 1.45vw, 1rem)/1.55 "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color: #cfe3f5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.term .p { color: var(--signal); }
+.term .dim { color: #7f9bb8; }
+.term .caret { display: inline-block; width: .55em; height: 1.1em; vertical-align: -.2em; background: var(--signal); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Features: words beside the real screen, alternating sides. */
+.features { padding: clamp(4rem, 9vw, 7rem) 0 1rem; }
+.features > h2, .setup > h2, .price > h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 2.5rem; max-width: 20ch; }
+.feature { display: grid; grid-template-columns: 1fr minmax(0, 17rem); gap: clamp(1.5rem, 6vw, 5rem); align-items: center; padding: 2.5rem 0; border-top: 1px solid var(--rule); }
+.feature:nth-of-type(even) { grid-template-columns: minmax(0, 17rem) 1fr; }
+.feature:nth-of-type(even) .shot { order: -1; }
+.feature h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -.015em; line-height: 1.15; margin: 0 0 .75rem; }
+.feature p { margin: 0; color: var(--mist); max-width: var(--measure); }
+.shot img { width: 100%; height: auto; display: block; border-radius: 28px; border: 6px solid var(--ink); background: var(--ink); }
+
+/* The one thing the phone can't show yet: the Mac's own screen. */
+.screen-note { margin-top: 1rem; padding: 2.5rem 0; border-top: 1px solid var(--rule); max-width: var(--measure); }
+.screen-note h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); letter-spacing: -.015em; margin: 0 0 .75rem; }
+.screen-note p { margin: 0 0 .75rem; color: var(--mist); }
+
+/* Setup is a real sequence, so it is numbered. */
+.setup { padding: clamp(3rem, 7vw, 5rem) 0; }
+.setup ol { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.setup li { counter-increment: step; }
+.setup li::before { content: counter(step); display: block; font-size: 2.6rem; font-weight: 800; line-height: 1; color: var(--link); margin-bottom: .6rem; }
+.setup li strong { display: block; font-size: 1.15rem; margin-bottom: .3rem; }
+.setup li span { color: var(--mist); }
+
+/* Pricing: a plain table of what is free and what is not. */
+.price { padding: 0 0 clamp(4rem, 8vw, 6rem); }
+.price table { width: 100%; max-width: 44rem; border-collapse: collapse; font-size: 1rem; }
+.price th, .price td { text-align: left; padding: .8rem .5rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.price th { font-weight: 600; }
+.price td:last-child, .price th:last-child { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.price tr.pro td { font-weight: 700; }
+.price p { color: var(--mist); max-width: var(--measure); margin: 1.25rem 0 0; }
+
+/* Prose pages: support and privacy. */
+.prose { max-width: 40rem; padding: clamp(2rem, 6vw, 4rem) 0 clamp(4rem, 8vw, 6rem); }
+.prose h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: -.03em; line-height: 1.05; margin: 0 0 .5rem; }
+.prose .updated { color: var(--mist); margin: 0 0 2.5rem; }
+.prose h2 { font-size: 1.3rem; letter-spacing: -.01em; margin: 2.25rem 0 .5rem; }
+.prose p, .prose li { color: #24374f; }
+.prose code { font: .92em "JetBrains Mono", ui-monospace, Menlo, monospace; background: var(--paper-deep); padding: .1em .35em; border-radius: 5px; }
+
+footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; color: var(--mist); font-size: .9rem; }
+footer .row { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+footer p { margin: .75rem 0 0; max-width: 46rem; }
+.lang-switch { background: none; border: 0; padding: 0; color: var(--link); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 720px) {
+  .feature > div { min-width: 0; }
+  .brand { font-size: 1rem; }
+  .feature, .feature:nth-of-type(even) { grid-template-columns: 1fr; }
+  .feature .shot, .feature:nth-of-type(even) .shot { order: 0; max-width: 15rem; }
+  .top nav { gap: .9rem; font-size: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .term .caret { animation: none; }
+}
