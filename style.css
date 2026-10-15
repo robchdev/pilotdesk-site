@@ -1,0 +1,36 @@
+:root { --ink: #16263a; --soft: #566a80; --paper: #f7fbff; --line: #dbe8f3; --accent: #1f6fb8; }
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #eaf4ff; --soft: #9fb4c8; --paper: #0f1a26; --line: #22364a; --accent: #7cc4ff; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink);
+  font: 17px/1.6 ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif; }
+header { background: linear-gradient(135deg, #263c58, #2f6fa8 55%, #59b8e8); color: #fff;
+  padding: 56px 16px 48px; text-align: center; }
+header img { width: 120px; height: 120px; border-radius: 27px; box-shadow: 0 12px 34px rgba(20, 10, 70, .35); }
+header h1 { font-size: 40px; line-height: 1.1; margin: 20px 0 6px; }
+header p { margin: 0; font-size: 19px; opacity: .92; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: center; padding: 14px 16px;
+  border-bottom: 1px solid var(--line); }
+a { color: var(--accent); }
+nav a { text-decoration: none; font-weight: 600; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
+main { max-width: 680px; margin: 0 auto; padding: 28px 16px 64px; }
+h2 { font-size: 24px; line-height: 1.25; margin: 36px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+p, ul { margin: 0 0 14px; }
+ul { padding-left: 22px; }
+footer { max-width: 680px; margin: 0 auto; padding: 20px 16px 48px; border-top: 1px solid var(--line);
+  color: var(--soft); font-size: 14px; }
+html[data-lang="en"] [lang="it"], html[data-lang="it"] [lang="en"] { display: none; }
+header .store { display: inline-block; margin-top: 26px; padding: 13px 28px; border-radius: 999px;
+  background: #fff; color: #3d2fae; font-weight: 700; text-decoration: none; box-shadow: 0 8px 22px rgba(20, 10, 70, .28); }
+header .store:hover, header .store:focus-visible { background: #f1edff; }
+header .platforms { margin-top: 12px; font-size: 15px; }
+.shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 14px;
+  margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+.shots img { flex: 0 0 auto; width: 200px; height: auto; border-radius: 24px; scroll-snap-align: start;
+  box-shadow: 0 10px 26px rgba(20, 10, 70, .22); }
+img.mac { display: block; width: 100%; height: auto; margin: 18px 0 8px; border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(20, 10, 70, .22); }
+@media (min-width: 700px) { .shots { justify-content: center; overflow: visible; margin: 0; padding: 4px 0 14px; } }
