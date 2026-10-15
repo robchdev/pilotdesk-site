@@ -2,7 +2,7 @@
 (function () {
   var el = document.getElementById("term");
   if (!el) return;
-  var prompt = "roberto@MacBook-Pro ~ % ";
+  var prompt = "you@MacBook-Pro ~ % ";
   var steps = [
     { out: "Last login: Thu Oct 16 09:41 from iPhone\n", dim: true },
     { cmd: "uptime" },
