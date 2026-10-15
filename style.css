@@ -144,3 +144,7 @@ footer p { margin: .75rem 0 0; max-width: 46rem; }
 @media (prefers-reduced-motion: reduce) {
   .term .caret { animation: none; }
 }
+
+.prose ol, .prose ul { padding-left: 1.3rem; }
+.prose li { margin: .35rem 0; }
+.screen-note + .screen-note { margin-top: 0; }
