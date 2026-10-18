@@ -59,6 +59,16 @@
   <p>What doesn't work: forwarding a port on the router or connecting over the open internet. PilotDesk only connects inside a private network, on purpose.</p>
   <p>If it keeps loading: check that the VPN is on on both, that the Mac is awake with PilotDesk Host open and its two permissions granted, and that you can open the Mac's terminal in PilotDesk from the same place.</p>
 
+  <h2 id="linux">Linux computers and servers</h2>
+  <p>Terminal, files, Monitor and Docker only need SSH: on Debian or Ubuntu run <code>sudo apt install openssh-server</code>, then add the computer in PilotDesk with its address, user name and password, as you would a Mac.</p>
+  <p>For its screen, <a href="https://github.com/robchdev/pilotdesk-site/releases/download/linux-1.0/pilotdesk-host_1.0_all.deb">download PilotDesk Host for Linux</a> and install it with <code>sudo apt install ./pilotdesk-host_1.0_all.deb</code>. Then run <code>pilotdesk-host</code> in a terminal of your desktop session, or open PilotDesk Host from the applications menu: it shows the pairing code and a QR.</p>
+  <ul>
+    <li><strong>Wayland (GNOME, KDE)</strong>: the desktop asks whether PilotDesk may share the screen. Pick the screen, turn on “Allow remote interaction” (without it you see the screen but cannot control it) and press Share.</li>
+    <li><strong>Start at every login</strong>: <code>pilotdesk-host --autostart</code>.</li>
+    <li><strong>Away from home</strong>, with Tailscale on both: start Remote Desktop on the phone, then on the computer run <code>pilotdesk-host --connect</code> followed by the phone's Tailscale address.</li>
+  </ul>
+  <p>On Linux there is no extended display, and ⌘ on the phone's keyboard acts as Ctrl, so ⌘C and ⌘V copy and paste.</p>
+
   <h2>The Mac is not found</h2>
   <p>Both devices must be on the same network, and PilotDesk must be allowed in Settings › Privacy &amp; Security › Local Network on the iPhone or iPad. Over a USB cable no network is needed.</p>
 
@@ -100,6 +110,16 @@
   </ul>
   <p>Cosa non funziona: aprire una porta sul router o collegarsi da internet aperta. PilotDesk si collega solo dentro una rete privata, apposta.</p>
   <p>Se resta a caricare: controlla che la VPN sia accesa su entrambi, che il Mac sia sveglio con PilotDesk Host aperta e i due permessi concessi, e che da lì riesci ad aprire il terminale del Mac in PilotDesk.</p>
+
+  <h2 id="linux-it">Computer e server Linux</h2>
+  <p>Terminale, file, Monitor e Docker richiedono solo SSH: su Debian o Ubuntu esegui <code>sudo apt install openssh-server</code>, poi aggiungi il computer in PilotDesk con indirizzo, nome utente e password, come faresti con un Mac.</p>
+  <p>Per il suo schermo <a href="https://github.com/robchdev/pilotdesk-site/releases/download/linux-1.0/pilotdesk-host_1.0_all.deb">scarica PilotDesk Host per Linux</a> e installalo con <code>sudo apt install ./pilotdesk-host_1.0_all.deb</code>. Poi esegui <code>pilotdesk-host</code> in un terminale della sessione grafica, o apri PilotDesk Host dal menu delle applicazioni: mostra il codice di abbinamento e un QR.</p>
+  <ul>
+    <li><strong>Wayland (GNOME, KDE)</strong>: il desktop chiede se PilotDesk può condividere lo schermo. Scegli lo schermo, attiva “Consenti interazione remota” (senza vedi lo schermo ma non puoi comandarlo) e premi Condividi.</li>
+    <li><strong>Avvio a ogni accesso</strong>: <code>pilotdesk-host --autostart</code>.</li>
+    <li><strong>Fuori casa</strong>, con Tailscale su entrambi: avvia il Desktop remoto sul telefono, poi sul computer esegui <code>pilotdesk-host --connect</code> seguito dall'indirizzo Tailscale del telefono.</li>
+  </ul>
+  <p>Su Linux non c'è lo schermo esteso, e il tasto ⌘ della tastiera del telefono fa da Ctrl, quindi ⌘C e ⌘V copiano e incollano.</p>
 
   <h2>Il Mac non viene trovato</h2>
   <p>I due dispositivi devono essere sulla stessa rete, e PilotDesk deve essere consentita in Impostazioni › Privacy e sicurezza › Rete locale su iPhone o iPad. Con il cavo USB la rete non serve.</p>
