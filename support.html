@@ -69,6 +69,12 @@
   </ul>
   <p>On Linux there is no extended display, and ⌘ on the phone's keyboard acts as Ctrl, so ⌘C and ⌘V copy and paste.</p>
 
+  <h2 id="windows">Windows PCs</h2>
+  <p>Terminal, files, Monitor and Docker work over the SSH server that comes with Windows 10 and 11. To turn it on: Settings › System › Optional features › View features, add “OpenSSH Server”. Then, in PowerShell opened as administrator:</p>
+  <p><code>Start-Service sshd; Set-Service sshd -StartupType Automatic</code></p>
+  <p>In PilotDesk add the PC with its address (its name on the network, its IP, or its Tailscale address), your Windows user name and password. With a Microsoft account the user name is the name of your folder in <code>C:\Users</code>. The terminal opens PowerShell; Files starts from your user folder.</p>
+  <p>With a key instead of a password, use an Ed25519 key. For an administrator account Windows reads keys from <code>C:\ProgramData\ssh\administrators_authorized_keys</code>, not from your user folder.</p>
+
   <h2>The Mac is not found</h2>
   <p>Both devices must be on the same network, and PilotDesk must be allowed in Settings › Privacy &amp; Security › Local Network on the iPhone or iPad. Over a USB cable no network is needed.</p>
 
@@ -120,6 +126,12 @@
     <li><strong>Fuori casa</strong>, con Tailscale su entrambi: avvia il Desktop remoto sul telefono, poi sul computer esegui <code>pilotdesk-host --connect</code> seguito dall'indirizzo Tailscale del telefono.</li>
   </ul>
   <p>Su Linux non c'è lo schermo esteso, e il tasto ⌘ della tastiera del telefono fa da Ctrl, quindi ⌘C e ⌘V copiano e incollano.</p>
+
+  <h2 id="windows-it">PC Windows</h2>
+  <p>Terminale, file, Monitor e Docker funzionano con il server SSH incluso in Windows 10 e 11. Per attivarlo: Impostazioni › Sistema › Funzionalità facoltative › Visualizza funzionalità, aggiungi “Server OpenSSH”. Poi, in PowerShell aperto come amministratore:</p>
+  <p><code>Start-Service sshd; Set-Service sshd -StartupType Automatic</code></p>
+  <p>In PilotDesk aggiungi il PC con il suo indirizzo (il nome in rete, l'IP o l'indirizzo Tailscale), il nome utente e la password di Windows. Con un account Microsoft il nome utente è quello della tua cartella in <code>C:\Users</code>. Il terminale apre PowerShell; File parte dalla tua cartella utente.</p>
+  <p>Se usi una chiave al posto della password, usa una chiave Ed25519. Per un account amministratore Windows legge le chiavi da <code>C:\ProgramData\ssh\administrators_authorized_keys</code>, non dalla tua cartella utente.</p>
 
   <h2>Il Mac non viene trovato</h2>
   <p>I due dispositivi devono essere sulla stessa rete, e PilotDesk deve essere consentita in Impostazioni › Privacy e sicurezza › Rete locale su iPhone o iPad. Con il cavo USB la rete non serve.</p>
