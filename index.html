@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Schibsted+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <script src="lang.js?v=4"></script>
 </head>
 <body>
@@ -28,20 +28,52 @@
 <main>
 <section class="hero">
   <h1><span lang="en">Your Mac, from wherever you are.</span><span lang="it">Il tuo Mac, ovunque tu sia.</span></h1>
-  <p class="lede" lang="en">PilotDesk opens your Mac's terminal and files on iPhone and iPad, shows its screen, and can turn your iPad into a second display.</p>
-  <p class="lede" lang="it">PilotDesk apre il terminale e i file del tuo Mac su iPhone e iPad, ti fa vedere il suo schermo e trasforma l'iPad in un secondo monitor.</p>
+  <p class="lede" lang="en">See and control your Mac's screen from your iPhone, turn your iPad into a second display, and keep its terminal, files and AI agents in your pocket.</p>
+  <p class="lede" lang="it">Vedi e comandi lo schermo del Mac dall'iPhone, usi l'iPad come secondo monitor, e hai in tasca il suo terminale, i file e gli agenti IA.</p>
   <div class="actions">
     <a class="store" href="https://apps.apple.com/app/id6823354511">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.77c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.52zM14.2 6.3c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.65-1.05 1.68-.92 2.67.97.08 1.96-.49 2.56-1.22z"/></svg>
       <span lang="en">Get it on the App Store</span><span lang="it">Scaricala dall'App Store</span>
     </a>
-    <a class="host-link" href="#host"><span lang="en">PilotDesk Host for the Mac, free</span><span lang="it">PilotDesk Host per il Mac, gratis</span></a>
+    <a class="host-link" href="#host"><span lang="en">See how screen sharing works</span><span lang="it">Guarda come funziona lo schermo</span></a>
   </div>
 
   <div class="mac" aria-hidden="true">
     <div class="display"><div class="glass"><pre class="term" id="term"></pre></div></div>
     <div class="stand"></div><div class="foot"></div>
   </div>
+</section>
+
+<section class="screens" id="host">
+  <h2><span lang="en">Not just the terminal: the whole screen.</span><span lang="it">Non solo il terminale: tutto lo schermo.</span></h2>
+  <p class="lede" lang="en">Install the free PilotDesk Host on the Mac and the phone becomes a window onto it: you see the desktop live, click with a tap, scroll with two fingers and type on a real Mac keyboard.</p>
+  <p class="lede" lang="it">Installi sul Mac PilotDesk Host, gratis, e il telefono diventa una finestra sul Mac: vedi il desktop dal vivo, clicchi con un tocco, scorri con due dita e scrivi su una vera tastiera da Mac.</p>
+
+  <figure class="wide"><img lang="en" src="img/en-screen.jpg" alt="The Mac's desktop on an iPhone held sideways" loading="lazy" width="1200" height="552"><img lang="it" src="img/it-screen.jpg" alt="Il desktop del Mac su un iPhone girato" loading="lazy" width="1200" height="552"></figure>
+
+  <div class="trio">
+    <div>
+      <h3><span lang="en">Remote desktop</span><span lang="it">Desktop remoto</span></h3>
+      <p lang="en">Your Mac's screen on iPhone or iPad, at home over Wi-Fi or away through your VPN.</p>
+      <p lang="it">Lo schermo del Mac su iPhone o iPad, a casa via Wi-Fi o fuori attraverso la tua VPN.</p>
+    </div>
+    <div>
+      <h3><span lang="en">A second display</span><span lang="it">Un secondo monitor</span></h3>
+      <p lang="en">The Mac extends onto your iPad or iPhone like any other monitor, over Wi-Fi or a USB cable.</p>
+      <p lang="it">Il Mac si allarga sull'iPad o sull'iPhone come su un monitor qualsiasi, via Wi-Fi o con il cavo USB.</p>
+    </div>
+    <div>
+      <h3><span lang="en">iPhone Duo, a small laptop</span><span lang="it">iPhone Duo, un piccolo portatile</span></h3>
+      <p lang="en">Open it halfway: the Mac on top, keyboard and trackpad below the fold.</p>
+      <p lang="it">Aprilo a metà: il Mac sopra, tastiera e trackpad sotto la piega.</p>
+    </div>
+  </div>
+
+  <figure class="duo"><img lang="en" src="img/en-duo.jpg" alt="iPhone Duo opened like a laptop, the Mac's screen on top and the keyboard below" loading="lazy" width="900" height="894"><img lang="it" src="img/it-duo.jpg" alt="iPhone Duo aperto come un portatile, lo schermo del Mac sopra e la tastiera sotto" loading="lazy" width="900" height="894"></figure>
+
+  <p><a class="store" href="https://github.com/robchdev/pilotdesk-site/releases/latest/download/PilotDesk-Host.dmg"><span lang="en">Download PilotDesk Host for the Mac</span><span lang="it">Scarica PilotDesk Host per il Mac</span></a></p>
+  <p class="small" lang="en">Free, for macOS 14 or later, signed and notarized by Apple. No account and no server in between: the picture goes straight from your Mac to your device.</p>
+  <p class="small" lang="it">Gratis, per macOS 14 o successivo, firmata e notarizzata da Apple. Nessun account e nessun server in mezzo: l'immagine va dritta dal Mac al tuo dispositivo.</p>
 </section>
 
 <section class="features">
@@ -83,13 +115,10 @@
     <div class="shot"><img lang="en" src="img/en-4.jpg" alt="Docker containers on the Mac" loading="lazy" width="507" height="1100"><img lang="it" src="img/it-4.jpg" alt="I container Docker del Mac" loading="lazy" width="507" height="1100"></div>
   </div>
 
-  <div class="screen-note" id="host">
-    <h3><span lang="en">The Mac's screen, and a second one</span><span lang="it">Lo schermo del Mac, e un secondo schermo</span></h3>
-    <p lang="en">With PilotDesk Host open on the Mac you can see and control its screen, or let the Mac use your iPad or iPhone as an extra display. It works over Wi-Fi or a USB cable.</p>
-    <p lang="it">Con PilotDesk Host aperta sul Mac puoi vedere e comandare il suo schermo, oppure far usare al Mac il tuo iPad o iPhone come monitor in più. Funziona via Wi-Fi o con il cavo USB.</p>
-    <p><a class="host-link" href="https://github.com/robchdev/pilotdesk-site/releases/latest/download/PilotDesk-Host.dmg"><span lang="en">Download PilotDesk Host</span><span lang="it">Scarica PilotDesk Host</span></a></p>
-    <p lang="en">Free, for macOS 14 or later, signed and notarized by Apple.</p>
-    <p lang="it">Gratis, per macOS 14 o successivo, firmata e notarizzata da Apple.</p>
+  <div class="screen-note">
+    <h3><span lang="en">Your AI agents, while you're out</span><span lang="it">I tuoi agenti IA, mentre sei fuori</span></h3>
+    <p lang="en">Start Claude Code, Codex, Gemini CLI, Aider or Ollama on the Mac with one tap. They keep working when you close the app, you follow them in the Dynamic Island and pick up where you left off.</p>
+    <p lang="it">Avvii Claude Code, Codex, Gemini CLI, Aider o Ollama sul Mac con un tocco. Continuano a lavorare quando chiudi l'app, li segui nella Dynamic Island e riprendi da dove eri rimasto.</p>
   </div>
 
   <div class="screen-note">
@@ -148,8 +177,8 @@
       <tr class="pro"><td><span lang="en">PilotDesk Pro: all of it, and what comes next</span><span lang="it">PilotDesk Pro: tutto, e quello che arriverà</span></td><td>9,99 €</td></tr>
     </tbody>
   </table>
-  <p lang="en">One-time purchases, no subscription. Try everything free for 24 hours inside the app. Prices are for Italy and vary by country.</p>
-  <p lang="it">Acquisti una tantum, nessun abbonamento. Nell'app provi tutto gratis per 24 ore. Prezzi per l'Italia, cambiano da paese a paese.</p>
+  <p lang="en">One-time purchases, no subscription, where many remote desktop apps charge every month or year. Try everything free for 24 hours inside the app. Prices are for Italy and vary by country.</p>
+  <p lang="it">Acquisti una tantum, nessun abbonamento, mentre molte app di desktop remoto si pagano ogni mese o ogni anno. Nell'app provi tutto gratis per 24 ore. Prezzi per l'Italia, cambiano da paese a paese.</p>
 </section>
 </main>
 

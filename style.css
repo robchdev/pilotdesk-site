@@ -148,3 +148,20 @@ footer p { margin: .75rem 0 0; max-width: 46rem; }
 .prose ol, .prose ul { padding-left: 1.3rem; }
 .prose li { margin: .35rem 0; }
 .screen-note + .screen-note { margin-top: 0; }
+
+/* The screen section leads: remote desktop, second display, Duo. */
+.screens { padding: clamp(4rem, 9vw, 7rem) 0 1rem; }
+.screens > h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: -.02em; line-height: 1.1; margin: 0 0 1rem; max-width: 22ch; }
+.screens .lede { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--mist); max-width: var(--measure); margin: 0 0 2rem; }
+.screens figure { margin: 0 0 2rem; }
+.screens figure img { width: 100%; height: auto; display: block; }
+.screens .wide img { border-radius: 26px; border: 6px solid var(--ink); background: var(--ink); }
+.screens .duo { max-width: 34rem; margin-inline: auto; }
+.screens .duo img { border-radius: 22px; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 4vw, 2.5rem); padding: 1rem 0 2.5rem; border-top: 1px solid var(--rule); }
+.trio h3 { font-size: 1.2rem; letter-spacing: -.01em; margin: 1rem 0 .4rem; }
+.trio p { margin: 0; color: var(--mist); }
+.screens .small { color: var(--mist); font-size: .95rem; max-width: var(--measure); margin: 1rem 0 0; }
+@media (max-width: 720px) {
+  .trio { grid-template-columns: 1fr; }
+}
