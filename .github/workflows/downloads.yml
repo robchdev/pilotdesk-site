@@ -1,0 +1,26 @@
+# Once a day, appends the Host download counts of every release to
+# downloads.csv on the `stats` branch (GitHub keeps only the running total).
+name: Host downloads
+on:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: stats
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f downloads.csv ] || echo "date,release,asset,downloads" > downloads.csv
+          gh api "repos/${{ github.repository }}/releases" --paginate \
+            --jq '.[] | .tag_name as $t | .assets[] | "'"$(date -u +%F)"',\($t),\(.name),\(.download_count)"' >> downloads.csv
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads.csv
+          git commit -m "Downloads $(date -u +%F)" && git push || true
